@@ -1,0 +1,70 @@
+#include <Servo.h>
+
+Servo left1;
+Servo left2;
+Servo left3;
+Servo left4;
+Servo left5;
+Servo right1;
+Servo right2;
+Servo right3;
+Servo right4;
+Servo right5;
+  
+int Servo1 = A0;
+int Servo2 = A1;
+int Servo3 = A2;
+int Servo4 = A3;
+int Servo5 = A4;
+int Servo6 = 6;
+int Servo7 = 4;
+int Servo8 = 5;
+int Servo9 = 3;
+int Servo10 = 2;
+  
+int servo1Offset = 90;
+int servo2Offset = 0;
+int servo3Offset = 0; 
+int servo4Offset = 0;
+int servo5Offset = 0; 
+int servo6Offset = 0;
+int servo7Offset = 0;
+int servo8Offset = 0;
+int servo9Offset = 0;
+int servo10Offset = 0;
+  
+void setup() {
+  Serial.begin(9600);
+  
+  left1.attach(Servo6);
+  left2.attach(Servo7);
+  left3.attach(Servo8);
+  left4.attach(Servo9);
+  left5.attach(Servo10);
+  right1.attach(Servo1);
+  right2.attach(Servo2);
+  right3.attach(Servo3);
+  right4.attach(Servo4);
+  right5.attach(Servo5);
+  
+  calibrateServos();
+} 
+  
+void loop() {
+  // After calibration, the servos will move to zero automatically
+}
+  
+void calibrateServos() {
+  left1.write (0 + servo6Offset);
+  left2.write (0 + servo7Offset);
+  left3.write (0 + servo8Offset);
+  left4.write (0 + servo9Offset);
+  left5.write (0 + servo10Offset);
+  right1.write(0 + servo1Offset);
+  right2.write(0 + servo2Offset);
+  right3.write(0 + servo3Offset);
+  right4.write(0 + servo4Offset);
+  right5.write(0 + servo5Offset);
+  delay(2000);
+} 
+
